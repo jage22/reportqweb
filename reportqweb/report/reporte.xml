@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="id_del_template">
+
+               <t t-call="report.html_container">
+                   <t t-foreach="docs" t-as="o">
+                       <t t-call="report.external_layout">
+                           <div class="page">
+								
+								    <br></br>
+								   
+									<ul class="list-unstyled" align="right">
+									  
+									  <li><h4 t-field="o.partner_id"></h4></li>
+									  <li><h5 t-field="o.partner_id.street"></h5></li>
+									  <li><h5 t-field="o.partner_id.city"></h5></li>
+									  <li><h5 t-field="o.partner_id.country_id"></h5></li>
+									</ul>
+									 
+									
+									
+								  
+								 
+									
+								
+								<br></br>
+								<br></br>
+								<br></br>
+							
+									
+										<table>
+											<tr>
+											<td width="50px"><strong><span t-field="o.name"/></strong></td>
+											<td><strong><span t-field="o.date_order"/></strong></td>
+											</tr>
+										</table>
+									
+								
+									
+								      
+								   
+										
+								    <table class="table table-bordered">
+										<thead>
+								    <tr>
+										<td align="center"><strong>Nombre</strong></td>
+										<td aling="center"><strong>Cantidad</strong></td>
+										<td aling="center"><strong>Precio</strong></td>
+										<td aling="center"><strong>Impuesto</strong></td>
+										<td aling="center"><strong>Total</strong></td>
+										
+									</tr>
+								    </thead>
+									 <tbody>
+									<t t-foreach="o.order_line.tax_id" t-as="i">
+										
+									
+									 <tr>
+										<td><span t-field="o.order_line.product_id"/></td>
+										<td><span t-field="o.order_line.product_uom_qty"/></td>
+										<td><span t-field="o.order_line.price_unit"/></td>
+										<td><span t-field="i.name"/></td>
+										<td><span t-field="o.amount_total"/></td>
+										
+										
+									</tr>
+								    
+								    </t>
+								    </tbody>
+									
+								 </table>
+								 <br></br>
+								 <br></br>
+								 <br></br>
+								    <table align="right">
+										<tr>
+											<td><strong>Subtotal:</strong></td>
+											<td width="50px"><span t-field="o.order_line.price_subtotal"/></td>
+											
+										</tr>
+								        <tr>
+											<td><strong>Impuestos:</strong></td>
+											<td > <span t-field="o.amount_tax"/></td>
+								        </tr>
+								       
+								        <tr class="border-black">
+											<td><strong>Total:</strong></td>
+											<td><span t-field="o.amount_total"/></td>								        
+								        
+								        </tr>
+								   
+								    </table>
+								 
+								 
+                           </div>
+                       </t>
+                   </t>
+               </t>
+           </template>   
+</data>
+</openerp>

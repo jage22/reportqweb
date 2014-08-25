@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<openerp>
+		<data>
+		   <report id="report_webkit"
+			model="sale.order"
+			name="reportqweb.id_del_template"
+			file="reportqweb.id_del_template"
+			string="Generate Report"
+			report_type="qweb-pdf"/>
+		</data>
+	</openerp>
+
+
+
+
